@@ -9,8 +9,28 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
 # Setup and Dependencies
 
   * Python 2.7
-  * Scikit-Learn
+  * Scikit-Learn <a href = "http://scikit-learn.org" target="blank_" />
+   
+  #About scikit-learn
   
+  #user instal
+
+  * Python (>= 2.7 or 3.4)
+  * Numpy  (>= 1.8.2)
+  * SciPy  (>=0.13.3)
+  
+  #User install scikit-learn
+  
+  para instalar scikit-learn usamos pip
+  
+  pip install -U scikit-learn
+  
+  #Documentation scikit-learn
+  
+   HTML documentation (stable release): http://scikit-learn.org
+   HTML documentation (development version): http://scikit-learn.org/dev/
+   FAQ: http://scikit-learn.org/stable/faq.html
+
 # Output
 
   El siguiente script genera un archivo TXT de nombre similitud.txt en el directorio raíz. 
