@@ -22,7 +22,7 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
   
 ### User install scikit-learn
   
-  para instalar scikit-learn usamos pip
+  para instalar scikit-learn 
  
     pip install -U scikit-learn
   
