@@ -1,6 +1,6 @@
 # tf_idf_cosine_similarities
 
-El siguiente programa analiza archivos de extensión .txt dentro de un directorio y los transforme en vectores con el fin de poder encontrar una similitud entre ellos.
+El siguiente programa analiza archivos de extensión .txt dentro de un directorio y los transforma en vectores con el fin de poder encontrar una similitud entre ellos utilizando TF-IDF y La similutd de Coseno.
 
 Para el calculo de TF-IDF se utilizando *TfidfVectorizer* de la libreria *scikit-learn*, con esto representamos los documentos como vectores. Estos vectores ya vienen normalizados con la norma euclidiana. 
 
@@ -8,7 +8,8 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
 
 # Setup and Dependencies
 
-  * Python / Scikit-Learn
+  * Python 2.7
+  * Scikit-Learn
   
 # Output
 
