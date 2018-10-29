@@ -2,7 +2,7 @@
   
 # Setup and Dependencies
 
-  *Python / SKLearn
+  * Python / SKLearn
   
 # Output
 
