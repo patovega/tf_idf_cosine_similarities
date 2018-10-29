@@ -9,7 +9,7 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
 # Setup and Dependencies
 
   * Python 2.7
-  * Scikit-Learn <a href = "http://scikit-learn.org" target="blank_" />
+  * Scikit-Learn <a href = "http://scikit-learn.org" target="blank_" />Sitio web</a>
    
   #About scikit-learn
   
@@ -27,9 +27,9 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
   
   #Documentation scikit-learn
   
-   HTML documentation (stable release): http://scikit-learn.org
-   HTML documentation (development version): http://scikit-learn.org/dev/
-   FAQ: http://scikit-learn.org/stable/faq.html
+   HTML documentation (stable release):  <a href = "http://scikit-learn.org" target="blank_" /> http://scikit-learn.org</a>
+   HTML documentation (development version): <a href = "http://scikit-learn.org</a>http://scikit-learn.org/dev/" target="blank_" />http://scikit-learn.org</a>http://scikit-learn.org/dev/</a>
+   FAQ: <a href = "http://scikit-learn.org/stable/faq.html" target="blank_" />http://scikit-learn.org/stable/faq.html</a>
 
 # Output
 
