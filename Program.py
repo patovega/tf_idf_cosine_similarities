@@ -49,8 +49,11 @@ j = 1
 #registro de inicio del proceso
 print "inicio"
 print(datetime.datetime.now())
+
+filename = "similitud.txt"
+if os.path.exists(filename): os.remove(filename)
 #creamos archivo si no existe
-f = open("similitud.txt", "w")
+f = open(filename, "w")
 
 #recorremos cada uno de los elementos de los documentos
 while i < len(documentos):
@@ -62,7 +65,8 @@ while i < len(documentos):
   print ("comparando",files[i],"documento_similar:",files[ related_docs_indices[1] ],"distancia",cosine_similarities[related_docs_indices[1]])
 
   #guardamos en archivo
-  f.write("{}{}{}".format(files[i], files[ related_docs_indices[1] ],cosine_similarities[related_docs_indices[1]] ))
+  f.write("{}{}{}{}{}".format(files[i]," ",files[ related_docs_indices[1] ], " ", cosine_similarities[related_docs_indices[1]] ))
+  f.write("\n")
   #aumentamos accumuladores
   i = i + 1
   j = j + 1
