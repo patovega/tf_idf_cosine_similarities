@@ -10,8 +10,10 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
 
   * Python 2.7
   * Scikit-Learn <a href = "http://scikit-learn.org" target="blank_" />Sitio web</a>
+## About Python
+  * Python 2.7.12 <a href = "https://www.python.org/downloads/" target="blank_" > Download </a>
    
-# About scikit-learn
+## About scikit-learn
   scikit-learn es un módulo de Python para aprendizaje automático construido sobre SciPy y distribuido bajo la licencia BSD de 3 cláusulas.
   
 ### Dependencies scikit-learn
@@ -31,6 +33,14 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
  * HTML documentation (stable release):  <a href = "http://scikit-learn.org" target="blank_" /> http://scikit-learn.org</a>
  * HTML documentation (development version): <a href = "http://scikit-learn.org</a>http://scikit-learn.org/dev/" target="blank_" />http://scikit-learn.org</a>http://scikit-learn.org/dev/</a>
  * FAQ: <a href = "http://scikit-learn.org/stable/faq.html" target="blank_" />http://scikit-learn.org/stable/faq.html</a>
+# Quick start
+
+Para correr el programa debes abrir Python en tu consola de comandos (CMD) y dirigirte al directorio que aloja el programa.
+
+Una vez en el directorio debes ejecutar el siguiente comando:
+
+    Python Program.py
+ 
 
 # Output
 
@@ -40,3 +50,5 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
     1. Primera columna: archivo procesado
     2. Segunda columna: archivo más similar al archivo procesado (columna 1)
     3. Tercera columna: distancia entre ambos archivos. (similitud de coseno)
+    
+
