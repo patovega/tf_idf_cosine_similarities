@@ -14,19 +14,19 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
 # About scikit-learn
   scikit-learn es un módulo de Python para aprendizaje automático construido sobre SciPy y distribuido bajo la licencia BSD de 3 cláusulas.
   
-# Dependencies scikit-learn
+### Dependencies scikit-learn
 
   * Python (>= 2.7 or 3.4)
   * Numpy  (>= 1.8.2)
   * SciPy  (>=0.13.3)
   
-# User install scikit-learn
+### User install scikit-learn
   
   para instalar scikit-learn usamos pip
  
     pip install -U scikit-learn
   
-# Documentation scikit-learn
+### Documentation scikit-learn
 
  * HTML documentation (stable release):  <a href = "http://scikit-learn.org" target="blank_" /> http://scikit-learn.org</a>
  * HTML documentation (development version): <a href = "http://scikit-learn.org</a>http://scikit-learn.org/dev/" target="blank_" />http://scikit-learn.org</a>http://scikit-learn.org/dev/</a>
