@@ -17,4 +17,4 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
   
     1. Primera columna: archivo procesado
     2. Segunda columna: archivo más similar al archivo procesado (columna 1)
-    3. Tercera columna: similitud de coseno entre los vectores entre el archivo procesado y los archivos registrados.
+    3. Tercera columna: distancia entre ambos archivos. (similitud de coseno)
