@@ -52,7 +52,7 @@ Una vez en el directorio debes ejecutar el siguiente comando:
  
 Ejemplo:
 
-	C:\Python27>python C:\Users\Pvega\Diplomado\tareas\_17048470_TF_IDG_Similitud\Program.py
+	C:\Python27>python C:\Users\Pvega\TF_IDF\Program.py
  
 El programa procesara los archivos de extensión txt de la carpeta dataset.
 
