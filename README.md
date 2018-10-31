@@ -11,7 +11,7 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
   * Python 2.7
   * Scikit-Learn <a href = "http://scikit-learn.org" target="blank_" />Sitio web</a>
 ## About Python
-  * Python 2.7.12 <a href = "https://www.python.org/downloads/" target="blank_" > Download </a>
+  * Python 2.7.15 <a href = "https://www.python.org/downloads/" target="blank_" > Download </a>
    
 ## About scikit-learn
   scikit-learn es un módulo de Python de MachineLearning construido sobre SciPy y distribuido bajo la licencia BSD de 3 cláusulas.
