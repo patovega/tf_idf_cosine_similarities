@@ -1,6 +1,6 @@
 # tf_idf_cosine_similarities
 
-El siguiente programa analiza archivos de extensión .txt dentro de un directorio y los transforma en vectores con el fin de poder encontrar una similitud entre ellos utilizando TF-IDF y La similutd de Coseno.
+El siguiente programa analiza archivos de extensión .txt dentro de un directorio (dataset/) y los transforma en vectores con el fin de poder encontrar una similitud entre ellos utilizando TF-IDF y La similutd de Coseno.
 
 Para el calculo de TF-IDF se utilizando *TfidfVectorizer* de la libreria *scikit-learn*, con esto representamos los documentos como vectores. Estos vectores ya vienen normalizados con la norma euclidiana. 
 
@@ -24,15 +24,24 @@ Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* p
   
 ### User install scikit-learn
   
-  para instalar scikit-learn 
+  para instalar scikit-learn via PIP  
  
-    pip install -U scikit-learn
+     C:\PythonXY\python pip install -U scikit-learn
+  
+  Esto instalara las dependencias de scikit-learn: Numpy & SciPy
+	
+  De lo contrario el programa presentara un error de tipo 
+	
+	File "Path\Program.py", line 3, in <module>
+		from sklearn.feature_extraction.text import TfidfVectorizer
+		ImportError: No module named sklearn.feature_extraction.text
   
 ### Documentation scikit-learn
 
  * HTML documentation (stable release):  <a href = "http://scikit-learn.org" target="blank_" /> http://scikit-learn.org</a>
  * HTML documentation (development version): <a href = "http://scikit-learn.org</a>http://scikit-learn.org/dev/" target="blank_" />http://scikit-learn.org</a>http://scikit-learn.org/dev/</a>
  * FAQ: <a href = "http://scikit-learn.org/stable/faq.html" target="blank_" />http://scikit-learn.org/stable/faq.html</a>
+ 
 # Quick start
 
 Para correr el programa debes abrir Python en tu consola de comandos (CMD) y dirigirte al directorio que aloja el programa.
@@ -41,10 +50,15 @@ Una vez en el directorio debes ejecutar el siguiente comando:
 
     Python Program.py
  
+Ejemplo:
+
+	C:\Python27>python C:\Users\Pvega\Diplomado\tareas\_17048470_TF_IDG_Similitud\Program.py
+ 
+El programa procesara los archivos de extensión txt de la carpeta dataset.
 
 # Output
 
-  El siguiente script genera un archivo TXT de nombre similitud.txt en el directorio raíz. 
+  El siguiente script genera un archivo TXT de nombre similitud.txt en el directorio raíz de python27 (C:\Python27). 
   El archivo contiene tres columnas: 
   
     1. Primera columna: archivo procesado
