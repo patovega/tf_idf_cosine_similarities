@@ -1,75 +1,72 @@
-#importamos librerias
-#con TfidfVectorizer transformarmos el contenido de nuestros archivos en vecotres TF*IDF
+#Import libs
+#sci kit learn for transform docs in TF IDF vectors.
 from sklearn.feature_extraction.text import TfidfVectorizer
-#con linear_kernel usamos nuestros vectores idf para comparar la similitud en nuestra lista de archivos
+#sci kit learn for cosine_similarities
 from sklearn.metrics.pairwise import linear_kernel
-#lo usamos para trackear horario de inicio de comparacion de similitud y fin de esta
-import datetime
-#os la utilizamos para el manejo de archivos
-import os
-#con glob tomamos los archivos desde una ruta en especifica
-import glob
 
-#las siguientes listas nos ayudaran a manejar nuestros archivos
-#documentos: contiene el contenido de cada uno de los archivos de la carpeta dataset/*.txt
-documentos = list()
-#files: contiene los nombres de los archivos procesados
+import datetime
+import os
+import glob
+import sys
+
+
+#documents: List, contains the content of each document
+documents = list() 
+#files: List, contains the name of each document
 files = list()
 
-print "Revisando archivos..."
+#get path of the current folder
+pathname = os.path.dirname(sys.argv[0])
+#Get files from folder
+path = glob.glob(pathname + "/dataset/*.txt")
 
-#@books contiene una lista de nombres de archivo de extension TXT
-books = glob.glob("dataset/*.txt")
-#recorrimos los elementos de la variable @books
-#por cada elemento:
-#el contenido lo dejamos en la lista documentos
-#detalle: para transformar el contenido en vector TF IDF con SKLEAR debe estar en minuscula
-#el nombre del documento lo dejamos en files.
-for book_file in books:
-    with open(book_file, 'r') as content_file:
-        # el archivo dataset.txt no nos interesa, lo omitimos
-        if(os.path.basename(content_file.name) == 'dataset.txt'):
-            continue
+#we take the content of each document
+for doc in path:
+    with open(doc, 'r') as content_file:
         content = content_file.read()
-        documentos.append(content.lower())
+        documents.append(content.lower())
         files.append(os.path.basename(content_file.name))
 
-#transformarmos en vectores tf idf con scklear y fit_transform
-#fit_transform debe recibir un objecto de tipo List
-#@tfidf = contiene nuestros documentos vectorizados
-tfidf = TfidfVectorizer().fit_transform(documentos)
-#tfidf
 
-#las siguientes variables son acumuladores
-#nos ayudaran para recorrer nuestro TF IDF vectorizado e ir comparandolo con otro documento
-#utilizando la similitud de coseno.
+print "Documents in dataset/ folder"
+print len(documents)
+
+#@tfidf = the documents are now vectors with TF IDF strategy
+tfidf = TfidfVectorizer().fit_transform(documents)
+
+#print start hour
+print "Started At: "
+print(datetime.datetime.now())
+
+#create a new document for the results of cosine similarities between all documents with TXT extension
+filename = "similitud.txt"
+#if file similitud.txt existh then is deleted.
+if os.path.exists(filename): os.remove(filename)
+#make new file similitud.txt
+f = open(filename, "w")
+
+#accumulators to travel the vector created with TfidfVectorizer
 i = 0
 j = 1
 
-#registro de inicio del proceso
-print "inicio"
-print(datetime.datetime.now())
-
-filename = "similitud.txt"
-if os.path.exists(filename): os.remove(filename)
-#creamos archivo si no existe
-f = open(filename, "w")
-
-#recorremos cada uno de los elementos de los documentos
-while i < len(documentos):
-  #calculamos la similitud de coseno
+#Look vector for all documents and we assign the most similar to related_docs_indices var
+while i < len(documents):
+  #we calculate the cosine similarity for the vector tfidf[i:j] 
   cosine_similarities = linear_kernel(tfidf[i:j], tfidf).flatten()
-  #encontramos el mas cercano
+  #we assign the most similar 
   related_docs_indices = cosine_similarities.argsort()[:-3:-1]
-  #imprimimos en consola
-  print ("comparando",files[i],"documento_similar:",files[ related_docs_indices[1] ],"distancia",cosine_similarities[related_docs_indices[1]])
+  #print result
+  print ("Filename: ",files[i]," Filename similiar: ",files[ related_docs_indices[1] ]," distance:",cosine_similarities[related_docs_indices[1]])
 
-  #guardamos en archivo
+  #save in similitud.txt 
   f.write("{}{}{}{}{}".format(files[i]," ",files[ related_docs_indices[1] ], " ", cosine_similarities[related_docs_indices[1]] ))
   f.write("\n")
-  #aumentamos accumuladores
+  #increase variables in 1
   i = i + 1
   j = j + 1
-#registro de fin del proceso
-print "fin"
-print( datetime.datetime.now())
+  
+
+#print end hour
+print "Finished At: "
+print(datetime.datetime.now())
+
