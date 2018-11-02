@@ -6,7 +6,7 @@ Este proyecto tiene por objetivo analizar archivos TXT y encontrar que archivo e
 
 Los archivos txt pueden contener noticias, oraciones, letras de canciones, cuentos, entre otros.
 
-#Script detail
+## Script detail
 
   * Recorrer cada uno de los archivos .txt de la carpeta dataset/ y obtener el contenido de estos.
   * Transformar cada archivo en vector.
