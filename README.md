@@ -1,15 +1,25 @@
 # tf_idf_cosine_similarities
 
-El siguiente programa analiza archivos de extensión .txt dentro de un directorio (dataset/) y los transforma en vectores con el fin de poder encontrar una similitud entre ellos utilizando TF-IDF y La similutd de Coseno.
+# Purpose
 
-Para el calculo de TF-IDF se utilizando *TfidfVectorizer* de la libreria *scikit-learn*, con esto representamos los documentos como vectores. Estos vectores ya vienen normalizados con la norma euclidiana. 
+Este proyecto tiene por objetivo analizar archivos TXT y encontrar que archivo es similar a otro dentro de un universo de archivos TXT.
+
+#Script detail
+
+  * Recorrer cada uno de los archivos .txt de la carpeta dataset/ y obtener el contenido de estos.
+  * Transformar cada archivo en vector.
+  * Comparar cada vector entre sí y obtener similitud de coseno.
+  * Registrar resultados en un archivo de nombre similitud.txt.
+
+Para el calculo de TF-IDF se utilizando *TfidfVectorizer* de la libreria *scikit-learn*, con esto representamos los documentos como vectores. Estos vectores son normalizados bajo la norma euclidiana. 
 
 Una vez representados los documentos como vectores, utilizamos *Linear_Kernel* para calcular el coseno del angulo entre dos vectores (archivo 1 y archivo a comparar) con los cual obtenemos la distancia entre ambos, que la medida de similitud de coseno.
 
 # Setup and Dependencies
 
-  * Python 2.7
+  * Python 2.7.15
   * Scikit-Learn <a href = "http://scikit-learn.org" target="blank_" />Sitio web</a>
+
 ## About Python
   * Python 2.7.15 <a href = "https://www.python.org/downloads/" target="blank_" > Download </a>
    
