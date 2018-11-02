@@ -17,7 +17,7 @@ files = list()
 
 #get path of the current folder
 pathname = os.path.dirname(sys.argv[0])
-#Get files from folder
+#Get files from folder called dataset
 path = glob.glob(pathname + "/dataset/*.txt")
 
 #we take the content of each document
@@ -28,19 +28,17 @@ for doc in path:
         files.append(os.path.basename(content_file.name))
 
 
-print "Documents in dataset/ folder"
-print len(documents)
+print ("Documents in dataset/ folder: " , len(documents))
 
 #@tfidf = the documents are now vectors with TF IDF strategy
 tfidf = TfidfVectorizer().fit_transform(documents)
 
-#print start hour
-print "Started At: "
-print(datetime.datetime.now())
+#set startedAt var for the timestamp when the process start
+startedAt = datetime.datetime.now()
 
 #create a new document for the results of cosine similarities between all documents with TXT extension
 filename = "similitud.txt"
-#if file similitud.txt existh then is deleted.
+#if file called similitud.txt exists, delete the file.
 if os.path.exists(filename): os.remove(filename)
 #make new file similitud.txt
 f = open(filename, "w")
@@ -61,12 +59,14 @@ while i < len(documents):
   #save in similitud.txt 
   f.write("{}{}{}{}{}".format(files[i]," ",files[ related_docs_indices[1] ], " ", cosine_similarities[related_docs_indices[1]] ))
   f.write("\n")
-  #increase variables in 1
+  #increase variables in 1 for the next value of cosine_similarities
   i = i + 1
   j = j + 1
   
+#close the file
+f.close()
 
 #print end hour
-print "Finished At: "
-print(datetime.datetime.now())
+print("The process startedAt was: " , startedAt)
+print("And the Finished At its: ", datetime.datetime.now())
 
